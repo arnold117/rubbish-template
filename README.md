@@ -1,6 +1,19 @@
-# Rubbish LaTeX Template
+<p align="center">
+  <img src="logo.png" alt="Rubbish Logo" width="160">
+</p>
 
-The unofficial, community-provided LaTeX template for ***Rubbish***---the pioneering open-access, peer-ignored journal hosted on Xiaohongshu (小红书), indexed by the *Web of Absurd* with an **Absurd Impact Factor (AIF) of 100**.
+<h1 align="center">Rubbish LaTeX Template</h1>
+
+<p align="center">
+  The unofficial, community-provided LaTeX template for <b><i>Rubbish</i></b>—the pioneering open-access,<br>
+  peer-ignored journal hosted on Xiaohongshu (小红书), indexed by the <i>Web of Absurd</i> with an <b>AIF of 100</b>.
+</p>
+
+<p align="center">
+  <a href="rubbish-template.pdf"><b>View Template Preview (PDF)</b></a>
+</p>
+
+---
 
 ## Why does this exist?
 
@@ -72,10 +85,6 @@ rubbish-template/
 3. Replace placeholder author/affiliation info
 4. Write your sections in the `multicols` environment
 5. Compile with XeLaTeX
-
-## Template Preview
-
-**[View the compiled template (PDF)](rubbish-template.pdf)**
 
 ## Contributing
 
