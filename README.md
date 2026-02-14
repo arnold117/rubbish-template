@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="Rubbish Logo" width="160">
+  <img src="logo.png" alt="Rubbish Logo" width="160" style="background-color:white; padding:12px; border-radius:8px;">
 </p>
 
 <h1 align="center">Rubbish LaTeX Template</h1>
