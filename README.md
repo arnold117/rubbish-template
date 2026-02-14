@@ -1,6 +1,14 @@
 <h1 align="center">Rubbish LaTeX Template</h1>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/AIF-100-007146?style=flat-square" alt="AIF: 100">
+  <img src="https://img.shields.io/badge/Peer_Review-Ignored-orange?style=flat-square" alt="Peer Review: Ignored">
+  <img src="https://img.shields.io/badge/Compiles-On_All_OS-brightgreen?style=flat-square" alt="Compiles: On All OS">
+  <img src="https://img.shields.io/badge/Template_Quality-Better_Than_.doc-blue?style=flat-square" alt="Template Quality: Better Than .doc">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License: MIT">
+</p>
+
+<p align="center">
   The unofficial, community-provided LaTeX template for <b><i>Rubbish</i></b>—the pioneering open-access,<br>
   peer-ignored journal hosted on Xiaohongshu (小红书), indexed by the <i>Web of Absurd</i> with an <b>AIF of 100</b>.
 </p>
@@ -18,6 +26,15 @@ The official *Rubbish* submission template is a Microsoft Word `.doc` file---not
 - Missing images (WMF format, Windows-only)
 - Collapsed formatting and broken layouts
 - Metadata scattered across random pages
+
+<details>
+<summary><b>Exhibit A: The .doc template on macOS (click to witness the horror)</b></summary>
+<br>
+<p align="center">
+  <img src="doc-macos-screenshot.png" alt="The .doc template rendered on macOS" width="600">
+</p>
+<p align="center"><i>The abstract has fled to the top of the page. The logo has lost its colour. The title stutters.<br>Viewer discretion is advised.</i></p>
+</details>
 
 WPS Office (Kingsoft) was evaluated as an alternative but proved equally inadequate, introducing font substitution artifacts and watermarks.
 
@@ -90,7 +107,7 @@ Pull requests are welcome. Given the journal's editorial standards, we suspect a
 
 If you use this template, you may cite the accompanying paper:
 
-> Arnold and Claude Opus 4.6. "The Official LaTeX Template for *Rubbish*: Because the `.doc` Template is, Well, Rubbish." *Rubbish*, 2026.
+> 学术小狐狐 and Claude Opus 4.6. "The Official LaTeX Template for *Rubbish*: Because the `.doc` Template is, Well, Rubbish." *Rubbish*, 2026.
 
 ## License
 

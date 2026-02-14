@@ -1,0 +1,32 @@
+name: "Feature Request: Make It More Rubbish"
+description: Suggest a feature that would make the template more aligned with the journal's mission
+labels: ["enhancement", "more-rubbish"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We welcome all feature requests. Given our editorial standards, your request will likely be approved without review.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Enhancement
+      description: What feature would you like to see?
+      placeholder: "Add a command that randomly deletes one paragraph per compilation to simulate the .doc experience."
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How urgently does Rubbish need this?
+      options:
+        - "Nice to have (like a functioning .doc template)"
+        - "Important (my AIF depends on it)"
+        - "Critical (I'm submitting tonight at 3 AM)"
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What other solutions have you tried?
+      placeholder: "I tried using the .doc template. I am now filing this feature request."

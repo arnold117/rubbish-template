@@ -1,0 +1,46 @@
+name: "Bug Report: Template Looks Too Professional"
+description: Report an issue where the template exceeds acceptable quality standards for Rubbish
+labels: ["bug", "too-professional"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for filing a bug report. Please note that all bugs undergo peer-ignored review.
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity of Professionalism
+      description: How professional does the template look?
+      options:
+        - "Mildly competent (minor issue)"
+        - "Suspiciously polished (moderate issue)"
+        - "Indistinguishable from Nature (critical)"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the issue in unnecessary academic detail.
+      placeholder: "The template compiled without errors on the first try, which is unprecedented in my LaTeX experience and therefore suspicious."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+      placeholder: "I expected at least three compilation errors and one missing font warning."
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - "macOS (the reason this template exists)"
+        - "Windows (you could just use the .doc)"
+        - "Linux (you probably wrote your own template already)"
+        - "Overleaf (the easy way out)"
+    validations:
+      required: true
