@@ -1,0 +1,58 @@
+## LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.pdfsync
+
+## Build output
+*.dvi
+*.ps
+
+## Bibliography
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+## Index
+*.idx
+*.ilg
+*.ind
+*.ist
+
+## Nomenclature
+*.nlo
+*.nls
+
+## Glossary
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+
+## Misc
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Editor files
+*.swp
+*~
+.vscode/
+
+## Keep the compiled PDF for convenience
+# *.pdf

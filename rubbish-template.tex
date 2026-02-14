@@ -1,0 +1,286 @@
+\documentclass[10pt]{article}
+
+%% ========== Packages ==========
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{indentfirst}
+\usepackage{fontspec}  % Requires XeLaTeX or LuaLaTeX
+
+\tcbuselibrary{skins,breakable}
+
+%% ========== Fonts ==========
+\setmainfont{Times New Roman}
+\newfontfamily\baskervillefont{Baskerville}[
+  ItalicFont=Baskerville-Italic,
+  BoldFont=Baskerville-Bold,
+]
+\newfontfamily\georgiafont{Georgia}
+
+%% ========== Page Geometry ==========
+\geometry{
+  a4paper,
+  left=1.5cm,
+  right=1.5cm,
+  top=2.0cm,
+  bottom=2.0cm,
+  headheight=15pt
+}
+
+%% ========== Colors (exact from original: #007146) ==========
+\definecolor{rubbishgreen}{HTML}{007146}
+\definecolor{abstractbg}{RGB}{230,243,235}
+\definecolor{doiboxbg}{HTML}{007146}
+\definecolor{linkblue}{HTML}{000080}
+
+%% ========== Hyperlink Setup ==========
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  citecolor=linkblue,
+  urlcolor=linkblue
+}
+
+%% ========== Header and Footer ==========
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{%
+  {\footnotesize\color{rubbishgreen}\textit{Rubbish}\,}%
+  {\footnotesize| Volume XX | February 2026 | XXXX}%
+}
+\fancyfoot[R]{\footnotesize\textbf{PAGE \thepage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{firstpage}{%
+  \fancyhf{}
+  \fancyfoot[L]{\footnotesize\textbf{PAGE \thepage}}
+  \fancyfoot[R]{%
+    {\footnotesize\color{rubbishgreen}\textit{Rubbish}\,}%
+    {\footnotesize| Volume XX | February 2026 | XXXX}%
+  }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+%% ========== Section Formatting (all bold italic, green) ==========
+\titleformat{\section}
+  {\normalfont\fontsize{12}{14}\selectfont\bfseries\itshape\color{rubbishgreen}}{\thesection}{0.5em}{}
+\titlespacing{\section}{0pt}{12pt plus 2pt minus 1pt}{4pt plus 1pt minus 1pt}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{10.5}{13}\selectfont\bfseries\itshape\color{rubbishgreen}}{\thesubsection}{0.5em}{}
+\titlespacing{\subsection}{0pt}{8pt plus 2pt minus 1pt}{3pt plus 1pt minus 1pt}
+
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{9}{11}\selectfont\bfseries\itshape\color{rubbishgreen}}{\thesubsubsection}{0.5em}{}
+\titlespacing{\subsubsection}{0pt}{6pt plus 1pt minus 1pt}{2pt plus 1pt minus 1pt}
+
+%% ========== Body text indent ==========
+\setlength{\parindent}{21pt}
+
+%% ========== Article Metadata Commands ==========
+\newcommand{\journalname}{RUBBISH}
+\newcommand{\journalsubtitle}{JOURNAL OF WASTE \& CIRCULAR ECONOMY}
+\newcommand{\journalvolume}{Vol. 7 | No. 1 | SPRING 2024}
+\newcommand{\articletype}{Research Article}
+\newcommand{\accesstype}{Open Access}
+\newcommand{\received}{Received 00th January 20xx,}
+\newcommand{\accepted}{Accepted 00th January 20xx}
+\newcommand{\articledoi}{DOI: xx.xxxx/xxxx}
+\newcommand{\articletitle}{Template for Rubbish Submissions Rubbish Submissions Rubbish Submission}
+
+%% ========== Document Begin ==========
+\begin{document}
+\thispagestyle{firstpage}
+
+%% ============================================================
+%% TITLE BLOCK (single column, full width)
+%% ============================================================
+
+%% ---------- Top Header: Logo + Info Box ----------
+\noindent
+\begin{minipage}[t]{0.55\textwidth}
+  \vspace{0pt}
+  \includegraphics[width=3.5cm]{logo.png}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.40\textwidth}
+  \vspace{0pt}
+  \begin{tcolorbox}[
+    colback=abstractbg,
+    colframe=rubbishgreen,
+    boxrule=0pt,
+    leftrule=3pt,
+    arc=0pt,
+    left=10pt, right=10pt, top=8pt, bottom=8pt,
+    fontupper=\small
+  ]
+    \textbf{\accesstype}\\[2pt]
+    \textbf{\articletype}\\[4pt]
+    \received\\
+    \accepted\\[4pt]
+    {\color{rubbishgreen}\textbf{\articledoi}}
+  \end{tcolorbox}
+\end{minipage}
+
+\vspace{14pt}
+
+%% ---------- Title ----------
+{\noindent\fontsize{48}{52}\selectfont\bfseries\color{rubbishgreen}\journalname\par}
+
+\vspace{6pt}
+
+{\noindent\fontsize{18}{22}\selectfont\bfseries \articletitle\par}
+
+\vspace{8pt}
+
+%% ---------- Authors ----------
+{\noindent\fontsize{10.5}{13}\selectfont
+  First Author\textsuperscript{1,*,$\dagger$},
+  Second Author\textsuperscript{2,*,$\dagger$},
+  Third Author\textsuperscript{2}
+  and Fourth Author\textsuperscript{2,*}
+\par}
+
+\vspace{3pt}
+
+{\noindent\fontsize{9}{11}\selectfont
+  \textsuperscript{1}First Institution
+  and \textsuperscript{2}Second Institution
+\par}
+
+\vspace{5pt}
+
+{\noindent\georgiafont\fontsize{9}{11}\selectfont
+  \textsuperscript{*}\,\href{mailto:abc@uni.edu}{\underline{abc@uni.edu}};
+  \href{mailto:alphbeta@lab.edu}{\underline{alphbeta@lab.edu}}
+\par}
+
+\vspace{2pt}
+
+{\noindent\fontsize{9}{11}\selectfont
+  \textsuperscript{$\dagger$}Contributed equally.
+\par}
+
+\vspace{10pt}
+
+%% ---------- Abstract Box ----------
+\begin{tcolorbox}[
+  colback=abstractbg,
+  colframe=rubbishgreen,
+  boxrule=0pt,
+  leftrule=3pt,
+  arc=0pt,
+  left=10pt, right=10pt, top=8pt, bottom=8pt,
+  fontupper=\fontsize{10}{12}\selectfont
+]
+  The abstract of the manuscript should cover a presentation of the interest
+  or relevance of these data for the broader community; a very brief preview
+  of the data type(s) produced, the methods used, and information relevant to
+  data validation. As well as the potential uses of these data and implications
+  for the field. Please minimize the use of abbreviations and do not cite
+  references in the abstract. As this article type is focussed on describing
+  a dataset, conclusions or interpretive insights are not required.
+\end{tcolorbox}
+
+\vspace{6pt}
+
+%% ---------- Keywords ----------
+{\noindent\fontsize{10.5}{13}\selectfont
+  \textbf{Keywords:} Classification~1; Classifications~2; Classifications~3\par}
+
+\vspace{8pt}
+
+%% ============================================================
+%% MAIN BODY (two-column layout using multicol)
+%% ============================================================
+\begin{multicols}{2}
+\baskervillefont
+
+\section{Introduction}
+
+This is the epigraph text, should you like to add one. This is the epigraph
+text, should you like to add one. This is the epigraph text, should you like to
+add one. This is the epigraph text, should you like to add one.
+
+\section{Methodology}
+
+This is the epigraph text, should you like to add one. This is the epigraph
+text, should you like to add one. This is the epigraph text, should you like to
+add one. This is the epigraph text, should you like to add one.
+
+\subsection{Title of Methodology}
+
+This is the epigraph text, should you like to add one. This is the epigraph
+text, should you like to add one. This is the epigraph text, should you like to
+add one. This is the epigraph text, should you like to add one.
+
+\subsubsection{Title of Methodology}
+
+This is the epigraph text, should you like to add one. This is the epigraph
+text, should you like to add one. This is the epigraph text, should you like to
+add one. This is the epigraph text, should you like to add one.
+
+\subsubsection{Title of Methodology}
+
+This is the epigraph text, should you like to add one. This is the epigraph
+text, should you like to add one. This is the epigraph text, should you like to
+add one. This is the epigraph text, should you like to add one.
+
+\section{Results and Discussion}
+
+\subsection{Title}
+
+This is the epigraph text, should you like to add one.
+
+\subsubsection{Title}
+
+\subsubsection{Title}
+
+This is the epigraph text, should you like to add one. This is the epigraph
+text, should you like to add one. This is the epigraph text, should you like to
+add one. This is the epigraph text, should you like to add one.
+
+\section{Conclusion}
+
+This is the epigraph text, should you like to add one. This is the epigraph
+text, should you like to add one. This is the epigraph text, should you like to
+add one. This is the epigraph text, should you like to add one.
+
+%% ========== Acknowledgements ==========
+\section*{Acknowledge}
+
+This is the epigraph text, should you like to add one. This is the epigraph
+text, should you like to add one. This is the epigraph text, should you like to
+add one. This is the epigraph text, should you like to add one.
+
+%% ========== References ==========
+\section*{Reference}
+
+\noindent [1] This is the epigraph text, should you like to add one. This is
+the epigraph text, should you like to add one. This is the epigraph text,
+should you like to add one. This is the epigraph text, should you like to add
+one.
+
+\medskip
+
+\noindent [2] This is the epigraph text, should you like to add one. This is
+the epigraph text, should you like to add one. This is the epigraph text,
+should you like to add one. This is the epigraph text, should you like to add
+one.
+
+\end{multicols}
+
+\end{document}
