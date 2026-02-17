@@ -44,11 +44,15 @@ This LaTeX template was forensically reconstructed from the original `.doc` bina
 
 - Cross-platform compilation (macOS, Windows, Linux)
 - [Overleaf](https://www.overleaf.com) compatible (zero installation)
+- Separated `.cls` class file + `.tex` content for clean authoring
 - Two-column body layout with single-column title block
 - Green accent color (`#007146`) matching the original design
-- Styled abstract box and DOI info box
+- Styled abstract box and MID info box
 - Section headings in bold italic green (3 levels)
 - Baskerville body text with proper paragraph indentation
+- Code blocks with green-accented syntax highlighting (`listings`)
+- CJK (Chinese/Japanese) text support via `xeCJK`
+- Self-documenting: compiles into its own user guide
 
 ## Quick Start
 
@@ -57,14 +61,18 @@ This LaTeX template was forensically reconstructed from the original `.doc` bina
 1. Download this repository as a ZIP
 2. Go to [Overleaf](https://www.overleaf.com) → New Project → Upload Project
 3. Upload the ZIP
-4. Set compiler to **XeLaTeX**
+4. Set compiler to **XeLaTeX** (Menu → Compiler → XeLaTeX)
 5. Compile and start writing your rubbish
+
+> **Note:** On Overleaf, change fonts in `rubbish.cls`:
+> Baskerville → `TeX Gyre Pagella`, Georgia → `TeX Gyre Termes`
 
 ### Option 2: Local Compilation
 
 ```bash
 # Requires XeLaTeX (ships with TeX Live / MacTeX / MiKTeX)
 xelatex rubbish-template.tex
+xelatex rubbish-template.tex   # run twice for cross-references
 ```
 
 **Required fonts** (pre-installed on macOS; install manually on Linux):
@@ -76,10 +84,12 @@ xelatex rubbish-template.tex
 
 ```
 rubbish-template/
-├── rubbish-template.tex   # The template — edit this
-├── rubbish-template.pdf   # Compiled preview
-├── logo.png               # Journal logo (extracted from original .doc)
-├── LICENSE                # MIT License
+├── rubbish.cls              # Document class — all styling lives here
+├── rubbish-template.tex     # The template — edit this
+├── rubbish-template.pdf     # Compiled preview
+├── logo.png                 # Journal logo (extracted from original .doc)
+├── LICENSE                  # MIT License
+├── CONTRIBUTING.md
 ├── .gitignore
 └── README.md
 ```
@@ -87,17 +97,30 @@ rubbish-template/
 ## Usage
 
 1. Open `rubbish-template.tex`
-2. Update the metadata commands at the top:
+2. Update the metadata commands in the preamble:
    ```latex
-   \newcommand{\articletype}{Research Article}
-   \newcommand{\received}{Received 00th January 20xx,}
-   \newcommand{\accepted}{Accepted 00th January 20xx}
-   \newcommand{\articledoi}{DOI: xx.xxxx/xxxx}
-   \newcommand{\articletitle}{Your Title Here}
+   \rubbishtitle{Your Paper Title Here}
+   \rubbishmid{MID: xx.xxxx/xxxx}
+   \rubbishreceived{Received 1st January 2026,}
+   \rubbishaccepted{Accepted 1st January 2026}
+   \rubbishtype{Research Article}
    ```
-3. Replace placeholder author/affiliation info
-4. Write your sections in the `multicols` environment
-5. Compile with XeLaTeX
+3. Set your authors and affiliations:
+   ```latex
+   \rubbishauthors{
+     Alice\textsuperscript{1,*},
+     Bob\textsuperscript{2}
+   }
+   \rubbishaffiliations{
+     \textsuperscript{1}University of Rubbish
+     and \textsuperscript{2}Institute of Waste\\[1pt]
+     \textsuperscript{*}\,alice@rubbish.edu
+   }
+   ```
+4. Write your content inside `\begin{rubbishbody}...\end{rubbishbody}`
+5. Compile with XeLaTeX (twice for cross-references)
+
+The compiled template itself serves as a comprehensive user guide — it documents every formatting feature (sections, figures, tables, equations, code blocks, footnotes, hyperlinks, CJK text, etc.).
 
 ## Contributing
 
