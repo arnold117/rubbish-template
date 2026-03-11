@@ -28,14 +28,11 @@
 \tcbuselibrary{skins,breakable}
 
 %% ========== Fonts ==========
-\setmainfont{Times New Roman}
-\newfontfamily\bodyfont{Baskerville}[
-  ItalicFont=Baskerville-Italic,
-  BoldFont=Baskerville-Bold,
-]                                            % macOS built-in; Overleaf: use TeX Gyre Pagella
+\setmainfont{TeX Gyre Termes}
+\newfontfamily\bodyfont{TeX Gyre Pagella}
 \newfontfamily\georgiafont{Georgia}
-\setCJKmainfont{PingFang SC}      % macOS default; SimSun (Windows), Noto Serif CJK SC (Linux)
-\setCJKmonofont{PingFang SC}     % Suppress xeCJK monofont warning
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Serif CJK SC}
 
 %% ========== Page Geometry ==========
 \geometry{
