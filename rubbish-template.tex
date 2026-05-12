@@ -14,21 +14,20 @@
 %% --- Authors ---
 %%   Superscript numbers link to affiliations.
 %%   * = corresponding author, † = equal contribution.
-\rubbishauthors{
-  First Author\textsuperscript{1,*,$\dagger$},
-  Second Author\textsuperscript{2,$\dagger$},
+\rubbishauthors{%
+  First Author\textsuperscript{1,*,\dag},
+  Second Author\textsuperscript{2,\dag},
   Third Author\textsuperscript{2}
   and Fourth Author\textsuperscript{2,*}
 }
 
 %% --- Affiliations (appear below author names) ---
-\rubbishaffiliations{
-  \textsuperscript{1}First Institution
+\rubbishaffiliations{%
+  \makebox[1ex][r]{\textsuperscript{1}}First Institution
   and \textsuperscript{2}Second Institution\\[1pt]
-  \textsuperscript{*}\,\georgiafont
-    \href{mailto:abc@uni.edu}{\underline{abc@uni.edu}};
-    \href{mailto:alphbeta@lab.edu}{\underline{alphbeta@lab.edu}}\\[1pt]
-  \textsuperscript{$\dagger$}Contributed equally.
+  \makebox[1ex][r]{\textsuperscript{*}}%
+    \mail{abc@uni.edu}; \mail{alphbeta@lab.edu}\\[1pt]
+  \makebox[1ex][r]{\textsuperscript{\dag}}Contributed equally.
 }
 
 %% --- Keywords ---
@@ -62,53 +61,53 @@ own manuscript before submission.
 
 \subsection{Compilation}
 
-This template must be compiled with \textbf{XeLaTeX} (not pdfLaTeX),
-because \texttt{rubbish.cls} uses the \texttt{fontspec} and
-\texttt{xeCJK} packages for font selection and CJK character support.
+This template must be compiled with \textbf{\hologo{XeLaTeX}}
+(not \hologo{pdfLaTeX}),
+because \path{rubbish.cls} uses the \pkg{fontspec} and
+\pkg{xeCJK} packages for font selection and CJK character support.
 A typical compilation sequence:
 
 \begin{enumerate}[leftmargin=*, itemsep=2pt]
-  \item \texttt{xelatex rubbish-template.tex}
-  \item \texttt{xelatex rubbish-template.tex} \quad (run twice for
+  \item "xelatex rubbish-template.tex"
+  \item "xelatex rubbish-template.tex" \quad (run twice for
         cross-references)
 \end{enumerate}
 
-\noindent On Overleaf, set the compiler to \textbf{XeLaTeX} via
-Menu $\to$ Compiler $\to$ XeLaTeX.
+\noindent On Overleaf, set the compiler to \textbf{\hologo{XeLaTeX}} via
+Menu $\to$ Compiler $\to$ \hologo{XeLaTeX}.
 
 \subsection{Required Files}
 
 Place the following files in the same directory:
 
 \begin{itemize}[leftmargin=*, itemsep=2pt]
-  \item \texttt{rubbish.cls} --- the document class (do not modify
+  \item \path{rubbish.cls} --- the document class (do not modify
         unless you know what you are doing)
-  \item \texttt{rubbish-template.tex} --- your paper (this file)
-  \item \texttt{logo.png} --- the \textit{Rubbish} journal logo
+  \item \path{rubbish-template.tex} --- your paper (this file)
+  \item \path{logo.png} --- the \emph{Rubbish} journal logo
   \item Any figures referenced by your paper
 \end{itemize}
 
 \section{Metadata Setup}
 
 All article metadata is configured in the preamble of this
-\texttt{.tex} file via simple commands. The most important ones:
+\path{.tex} file via simple commands. The most important ones:
 
 \begin{itemize}[leftmargin=*, itemsep=2pt]
-  \item \texttt{\textbackslash rubbishtitle\{...\}} --- your paper
-        title
-  \item \texttt{\textbackslash rubbishmid\{MID: ...\}} --- manuscript
+  \item "\rubbishtitle{...}" --- your paper title
+  \item "\rubbishmid{MID: ...}" --- manuscript
         ID assigned by the editorial board
-  \item \texttt{\textbackslash rubbishreceived\{...\}} and
-        \texttt{\textbackslash rubbishaccepted\{...\}} --- dates
-  \item \texttt{\textbackslash rubbishtype\{...\}} --- article type
+  \item "\rubbishreceived{...}" and
+        "\rubbishaccepted{...}" --- dates
+  \item "\rubbishtype{...}" --- article type
         (Research Article, Review, etc.)
 \end{itemize}
 
 \subsection{Authors and Affiliations}
 
-Authors are set with \texttt{\textbackslash rubbishauthors\{...\}}.
-Use superscript numbers to link authors to affiliations, \texttt{*} for
-corresponding authors, and \texttt{\$\textbackslash dagger\$} for equal
+Authors are set with "\rubbishauthors{...}".
+Use superscript numbers to link authors to affiliations, "*" for
+corresponding authors, and "$\dagger$" for equal
 contribution:
 
 \begin{verbatim}
@@ -119,15 +118,15 @@ contribution:
 \end{verbatim}
 
 \noindent Affiliations are set with
-\texttt{\textbackslash rubbishaffiliations\{...\}} and appear directly
+"\rubbishaffiliations{...}" and appear directly
 below the author names. Include institutions, contact emails, and
 contribution notes in that block.
 
 \subsection{Abstract and Keywords}
 
-The abstract is written inside the \texttt{rubbishabstract} environment.
+The abstract is written inside the "rubbishabstract" environment.
 Keywords are set separately with
-\texttt{\textbackslash rubbishkeywords\{...\}} and rendered
+"\rubbishkeywords{...}" and rendered
 automatically below the abstract box.
 
 \section{Text Formatting}
@@ -135,38 +134,38 @@ automatically below the abstract box.
 \subsection{Section Hierarchy}
 
 The template provides three levels of headings, all rendered in
-\textbf{\textit{\color{rubbishgreen}bold italic green}}:
+\textbf{\emph{\textcolor{rubbishgreen}{bold italic green}}}:
 
 \begin{enumerate}[leftmargin=*, itemsep=2pt]
-  \item \texttt{\textbackslash section\{...\}} --- 12\,pt
-  \item \texttt{\textbackslash subsection\{...\}} --- 10.5\,pt
-  \item \texttt{\textbackslash subsubsection\{...\}} --- 9\,pt
+  \item "\section{...}" --- 12\,pt
+  \item "\subsection{...}" --- 10.5\,pt
+  \item "\subsubsection{...}" --- 9\,pt
 \end{enumerate}
 
 \noindent Sections are numbered automatically. For unnumbered headings
-(e.g.\ Acknowledgements), use starred variants:
-\texttt{\textbackslash section*\{...\}}.
+(e.g. Acknowledgements), use starred variants:
+"\section*{...}".
 
 \subsection{Inline Styles}
 
 \begin{itemize}[leftmargin=*, itemsep=2pt]
-  \item \textbf{Bold}: \texttt{\textbackslash textbf\{...\}}
-  \item \textit{Italic}: \texttt{\textbackslash textit\{...\}}
-  \item \underline{Underline}: \texttt{\textbackslash underline\{...\}}
-  \item {\color{rubbishgreen}Coloured}:
-        \texttt{\{\textbackslash color\{rubbishgreen\}...\}}
-  \item \texttt{Monospace}: \texttt{\textbackslash texttt\{...\}}
+  \item \textbf{Bold}: "\textbf{...}"
+  \item \textit{Italic}: "\textit{...}"
+  \item \underline{Underline}: "\underline{...}"
+  \item \textcolor{rubbishgreen}{Coloured}:
+        "\textcolor{...}"
+  \item \texttt{Monospace}: "\texttt{...}"
 \end{itemize}
 
 \subsection{Lists}
 
-Numbered lists use \texttt{enumerate}; bullet lists use
-\texttt{itemize}. Add \texttt{[leftmargin=*]} to remove the default
+Numbered lists use "enumerate"; bullet lists use
+"itemize". Add "[leftmargin=*]" to remove the default
 left indent, as done throughout this guide.
 
 \subsection{Footnotes}
 
-Add footnotes with \texttt{\textbackslash footnote\{...\}}. They
+Add footnotes with "\footnote{...}". They
 are automatically numbered and placed at the bottom of the
 current column\footnote{Like this one.}. In the two-column layout,
 footnotes appear at the bottom of the column where they are
@@ -174,38 +173,38 @@ called, not at the bottom of the page.
 
 \subsection{Hyperlinks}
 
-The template uses the \texttt{hyperref} package. Available commands:
+The template uses the \pkg{hyperref} package. Available commands:
 
 \begin{itemize}[leftmargin=*, itemsep=2pt]
-  \item \texttt{\textbackslash href\{url\}\{text\}} --- clickable
+  \item "\href{url}{text}" --- clickable
         text, e.g.\
         \href{https://github.com/arnold117/rubbish-template}{template
         repository}
-  \item \texttt{\textbackslash url\{...\}} --- displays the full URL,
+  \item "\url{...}" --- displays the full URL,
         e.g.\ \url{https://example.com}
-  \item \texttt{\textbackslash href\{mailto:...\}\{...\}} --- email
+  \item "\href{mailto:...}{...}" --- email
         links, already used in the affiliations block
 \end{itemize}
 
 \noindent All links are rendered in dark blue
-(\texttt{linkblue}, \texttt{\#000080}) as defined in
-\texttt{rubbish.cls}.
+("linkblue", "#000080") as defined in
+\path{rubbish.cls}.
 
 \subsection{CJK Support}
 
 Chinese and Japanese text is supported natively via
-\texttt{xeCJK}. Example: 这是中文测试，日本語テスト。
+\pkg{xeCJK}. Example: 这是中文测试，日本語テスト。
 
 The default CJK font is PingFang SC (macOS). For other platforms,
-edit \texttt{rubbish.cls} and change
-\texttt{\textbackslash setCJKmainfont}: use SimSun on Windows or
+edit \path{rubbish.cls} and change
+"\setCJKmainfont": use SimSun on Windows or
 Noto Serif CJK SC on Linux.
 
 \subsection{Code Blocks}
 
-For short inline code, use \texttt{\textbackslash texttt\{...\}}
+For short inline code, use "\texttt{...}"
 to produce \texttt{monospaced text}. For multi-line code blocks,
-use the \texttt{lstlisting} environment, which renders inside a
+use the "lstlisting" environment, which renders inside a
 green-accented box with syntax highlighting:
 
 \begin{lstlisting}[language=Python]
@@ -215,7 +214,7 @@ data = ole.openstream("Data").read()
 # PNG at byte offset 583, 62717 bytes
 \end{lstlisting}
 
-\noindent Specify the language with \texttt{[language=...]}:
+\noindent Specify the language with "[language=...]":
 
 \begin{lstlisting}[language=bash]
 xelatex rubbish-template.tex
@@ -223,8 +222,8 @@ xelatex rubbish-template.tex
 \end{lstlisting}
 
 \noindent The code box style (green border, light green background,
-bold green keywords) is defined in \texttt{rubbish.cls} via
-\texttt{\textbackslash lstset}. Supported languages include Python,
+bold green keywords) is defined in \path{rubbish.cls} via
+"\lstset". Supported languages include Python,
 bash, C, Java, and many more.
 
 \section{Figures, Tables, and Equations}
@@ -232,9 +231,9 @@ bash, C, Java, and many more.
 \subsection{Figures}
 
 Within the two-column body, wrap figures in a
-\texttt{minipage\{\textbackslash columnwidth\}} with
-\texttt{\textbackslash captionof} for the caption. Here is the
-pattern used in actual \textit{Rubbish} submissions:
+"minipage{\columnwidth}" with
+"\captionof" for the caption. Here is the
+pattern used in actual \emph{Rubbish} submissions:
 
 \begin{verbatim}
 \noindent
@@ -261,13 +260,13 @@ as a demonstration of figure insertion.}
 \vspace{6pt}
 
 \noindent Reference figures in text with
-\texttt{Figure\textasciitilde\textbackslash ref\{fig:logo\}},
+"Figure~\ref{fig:logo}",
 which produces: Figure~\ref{fig:logo}.
 
 \subsection{Tables}
 
-Tables use \texttt{booktabs} for clean horizontal rules. Wrap in a
-\texttt{minipage} to keep within one column:
+Tables use \pkg{booktabs} for clean horizontal rules. Wrap in a
+"minipage" to keep within one column:
 
 \vspace{6pt}
 \noindent
@@ -288,10 +287,10 @@ Tables use \texttt{booktabs} for clean horizontal rules. Wrap in a
 \end{minipage}
 \vspace{6pt}
 
-\noindent Use \texttt{\textbackslash toprule},
-\texttt{\textbackslash midrule}, and \texttt{\textbackslash bottomrule}
-instead of \texttt{\textbackslash hline}. Use
-\texttt{\textbackslash captionof\{table\}\{...\}} for the caption.
+\noindent Use "\toprule",
+"\midrule", and "\bottomrule"
+instead of "\hline". Use
+"\captionof{table}{...}" for the caption.
 
 \subsection{Equations}
 
@@ -309,8 +308,7 @@ Inline math: $E = mc^2$. Display equations:
   d &= e \times f
 \end{align}
 
-\noindent Use \texttt{equation*} or
-\texttt{\textbackslash[...\textbackslash]} for unnumbered equations.
+\noindent Use "equation*" or "\[...\]" for unnumbered equations.
 
 \subsection{Full-Width Elements}
 
@@ -331,7 +329,7 @@ must temporarily exit and re-enter the two-column environment:
 \begin{rubbishbody}
 \end{verbatim}
 
-\noindent This breaks out of \texttt{multicols}, places the
+\noindent This breaks out of "multicols", places the
 full-width element, and restarts the two-column layout. The same
 pattern works for wide tables. Note that a column break will occur
 at the exit point, so place full-width elements at natural section
@@ -342,13 +340,13 @@ boundaries when possible.
 References in \textit{Rubbish} are formatted \textbf{manually} at the
 end of the document---no BibTeX or Biber. Cite in text as \texttt{[1]},
 \texttt{[2]}, etc. In the \textbf{Reference} section, list entries with
-\texttt{\textbackslash noindent [n]} and separate with
-\texttt{\textbackslash medskip}. Order by first appearance in the text.
+"\noindent [n]" and separate with
+"\medskip". Order by first appearance in the text.
 
 \section{Conclusion}
 
 Replace this guide with your own content. Keep the preamble metadata
-commands and the \texttt{rubbishabstract} / \texttt{rubbishbody}
+commands and the "\rubbishabstract" / "\rubbishbody"
 structure intact. Good luck---remember, the acceptance rate is
 100\%.
 
@@ -356,7 +354,7 @@ structure intact. Good luck---remember, the acceptance rate is
 %%   Optional. Thank funding agencies, collaborators, etc.
 \section*{Acknowledgements}
 
-The authors thank the \textit{Rubbish} editorial board for their
+The authors thank the \emph{Rubbish} editorial board for their
 unwavering commitment to accepting everything.
 
 %% ========== Conflicts of Interest ==========

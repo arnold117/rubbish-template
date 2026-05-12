@@ -20,22 +20,24 @@
 \RequirePackage{enumitem}
 \RequirePackage{float}
 \RequirePackage{caption}
+\captionsetup[table]{hypcap=false}
+\captionsetup[figure]{hypcap=false}
 \RequirePackage{indentfirst}
 \RequirePackage{booktabs}
 \RequirePackage{listings}
-\RequirePackage{fontspec}   % Requires XeLaTeX
-\RequirePackage{xeCJK}      % CJK support
+\RequirePackage[scheme = plain]{ctex}      % CJK support
 \tcbuselibrary{skins,breakable}
+\RequirePackage{anyfontsize}
+\RequirePackage{shortvrb}
+\MakeShortVerb\"
+\RequirePackage{hologo}
+\providecommand \pkg \textsf
 
 %% ========== Fonts ==========
 \setmainfont{Times New Roman}
-\newfontfamily\bodyfont{Baskerville}[
-  ItalicFont=Baskerville-Italic,
-  BoldFont=Baskerville-Bold,
-]                                            % macOS built-in; Overleaf: use TeX Gyre Pagella
-\newfontfamily\georgiafont{Georgia}
-\setCJKmainfont{PingFang SC}      % macOS default; SimSun (Windows), Noto Serif CJK SC (Linux)
-\setCJKmonofont{PingFang SC}     % Suppress xeCJK monofont warning
+\newfontfamily\bodyfont{BaskervilleF-Regular}[Extension = .otf,
+  BoldFont   = BaskervilleF-Bold, BoldItalicFont = BaskervilleF-Bold,
+  ItalicFont = BaskervilleF-BoldItalic,]
 
 %% ========== Page Geometry ==========
 \geometry{
@@ -75,7 +77,10 @@
 \fancyhf{}
 \fancyfoot[L]{%
   {\footnotesize\color{rubbishgreen}\textit{Rubbish}\,}%
-  {\footnotesize| Volume XX | February 2026 | XXXX}%
+  {\footnotesize| Volume XX | \ifcase \month \or
+    January\or February\or March\or April\or May\or June\or
+    July\or August\or September\or October\or November\or December%
+    \fi \space \number \year\ | XXXX}%
 }
 \fancyfoot[R]{\footnotesize\textbf{PAGE \thepage}}
 \renewcommand{\headrulewidth}{0pt}
@@ -219,5 +224,7 @@
 }{%
   \end{multicols}
 }
+
+\newcommand \mail[1]{\href{mailto:#1}{\underline{#1}}}
 
 \endinput
